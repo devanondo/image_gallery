@@ -7,17 +7,9 @@ import {
     Sortable,
     Props as SortableProps,
 } from './components/Sortable/Sortable'
-import { useEffect, useState } from 'react'
 
 const Gallery = () => {
     const { images } = useGalleryContext()
-    const [items, setItems] = useState(images)
-
-    useEffect(() => {
-        setTimeout(() => {
-            setItems(images)
-        }, 0)
-    }, [images])
 
     const props: Partial<SortableProps> = {
         adjustScale: true,
@@ -27,12 +19,12 @@ const Gallery = () => {
             width: 140,
             height: 140,
         }),
-        items,
     }
 
     return (
         <div>
             <Sortable
+                items={images}
                 {...props}
                 wrapperStyle={({ index }) => {
                     if (index === 0) {

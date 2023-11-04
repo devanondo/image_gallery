@@ -33,6 +33,7 @@ import { createRange } from '../../utilities'
 import { Item } from '../Item'
 import { List } from '../List'
 import { Wrapper } from '../Wrapper'
+import { useGalleryContext } from '@/app/provider/context-provider'
 
 export interface Props {
     activationConstraint?: PointerActivationConstraint
@@ -108,6 +109,13 @@ export function Sortable({
             initialItems ??
             createRange<UniqueIdentifier>(itemCount, (index) => index + 1)
     )
+
+    useEffect(() => {
+        setItems(
+            initialItems ??
+                createRange<UniqueIdentifier>(itemCount, (index) => index + 1)
+        )
+    }, [initialItems, itemCount])
 
     const [activeId, setActiveId] = useState<UniqueIdentifier | null>(null)
 
