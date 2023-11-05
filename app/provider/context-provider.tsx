@@ -34,7 +34,12 @@ export function GalleryContextProvider({ children }: Props) {
     const router = useRouter()
 
     const removeImage = async () => {
-        await axios.delete('/api/images', { data: checkedImage })
+        const isDelete = await axios.delete('/api/images', {
+            data: checkedImage,
+        })
+        // if(isDelete){
+        //     checkedImage([])
+        // }
         router.refresh()
     }
 
