@@ -21,17 +21,13 @@ Welcome to our project! This README provides an overview of what our project is 
 
 Before you begin, ensure you have met the following requirements:
 
-```bash
 -   [Node.js](https://nodejs.org/) (v14 or later)
 -   [npm](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/)
-```
 
 ## TechStack
 
-```bash
 **Client:** React, Next Js, TailwindCSS, ShadCN UI, Uploadthing, Context API & SCSS.
 **Server:** Node, Prisma & PostgreSQL.
-```
 
 ## Features
 
@@ -79,9 +75,29 @@ Before you begin, ensure you have met the following requirements:
 └── ...
 ```
 
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+`DATABASE_URL`
+
+`UPLOADTHING_SECRET`
+
+`UPLOADTHING_APP_ID`
+
+### Notes
+
+`All crutial information has shown on the .env file.`
+
 ## Acknowledgements
 
 -   [Next.js](https://nextjs.org/docs)
 -   [TypeScript](https://www.typescriptlang.org/docs)
 -   [Tailwind CSS](https://tailwindcss.com/docs)
 -   [DND-Kit](https://docs.dndkit.com/)
+
+## Contact
+
+If you have any questions or need assistance, please don't hesitate to contact us at [dev.abormon28@gmail.com].
+
+Happy image gallery management!

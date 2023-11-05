@@ -22,7 +22,7 @@ export default async function Home() {
                 <Separator />
 
                 {/* Gallery Body */}
-                <div className="p-6">
+                <div className="md:p-6">
                     <Gallery items={items} />
                 </div>
             </div>
