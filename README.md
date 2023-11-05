@@ -22,15 +22,15 @@ Welcome to our project! This README provides an overview of what our project is 
 Before you begin, ensure you have met the following requirements:
 
 ```bash
-    -   [Node.js](https://nodejs.org/) (v14 or later)
-    -   [npm](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/)
+-   [Node.js](https://nodejs.org/) (v14 or later)
+-   [npm](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/)
 ```
 
-## Tech Stack
+## TechStack
 
 ```bash
-    **Client:** React, Next Js, TailwindCSS, ShadCN UI, Uploadthing, Context API & SCSS.
-    **Server:** Node, Prisma & PostgreSQL.
+**Client:** React, Next Js, TailwindCSS, ShadCN UI, Uploadthing, Context API & SCSS.
+**Server:** Node, Prisma & PostgreSQL.
 ```
 
 ## Features
@@ -68,15 +68,15 @@ Before you begin, ensure you have met the following requirements:
 ## Structure
 
 ```bash
-    .
-    ├── image-gallery           # Root folder for image gallery
-    │   ├── app/                # Routes and Providers for app
-    │   ├── components/         # All components have their own
-    │       ├── dnd-kit/        # DND-KIT components (which are taken form dnd-kit)
-    │       ├── image-gallery/  # Image Gallery components
-    │       ├── ui/             # UI Related components generated with shadcn ui.
-    │   ├── lib/                # Additional healper functions.
-    └── ...
+.
+├── image-gallery           # Root folder for image gallery
+│   ├── app/                # Routes and Providers for app
+│   ├── components/         # All components have their own
+│       ├── dnd-kit/        # DND-KIT components (which are taken form dnd-kit)
+│       ├── image-gallery/  # Image Gallery components
+│       ├── ui/             # UI Related components generated with shadcn ui.
+│   ├── lib/                # Additional healper functions.
+└── ...
 ```
 
 ## Acknowledgements
