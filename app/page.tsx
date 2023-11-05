@@ -1,8 +1,17 @@
 import Gallery from '@/components/image-gallery/gallery'
 import GalleryHeader from '@/components/image-gallery/header'
 import { Separator } from '@/components/ui/separator'
+import { db } from '@/lib/db'
 
-export default function Home() {
+export default async function Home() {
+    const images = await db.images.findMany({
+        orderBy: {
+            createdAt: 'desc',
+        },
+    })
+
+    const items = images.map((item) => item.imageUrl)
+
     return (
         <div className="container py-4">
             {/* Image Gallery container */}
@@ -14,7 +23,7 @@ export default function Home() {
 
                 {/* Gallery Body */}
                 <div className="p-6">
-                    <Gallery />
+                    <Gallery items={items} />
                 </div>
             </div>
         </div>

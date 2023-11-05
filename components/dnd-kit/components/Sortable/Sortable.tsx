@@ -32,6 +32,7 @@ import { createRange } from '../../utilities'
 import { Item } from '../Item'
 import { List } from '../List'
 import { Wrapper } from '../Wrapper'
+import { FileUpload } from '@/components/upload-image/file-upload'
 
 export interface Props {
     activationConstraint?: PointerActivationConstraint
@@ -168,6 +169,10 @@ export function Sortable({
                                 getNewIndex={getNewIndex}
                             />
                         ))}
+
+                        <li className="w-1/1 aspect-[1/1] overflow-hidden">
+                            <FileUpload />
+                        </li>
                     </Container>
                 </SortableContext>
             </Wrapper>

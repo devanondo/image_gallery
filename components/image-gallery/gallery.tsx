@@ -1,16 +1,17 @@
 'use client'
 
-import { useGalleryContext } from '@/app/provider/context-provider'
-import { rectSortingStrategy } from '@dnd-kit/sortable'
-import { GridContainer } from '../dnd-kit/components/GridContainer'
 import {
     Sortable,
     Props as SortableProps,
 } from '@/components/dnd-kit/components/Sortable/Sortable'
+import { rectSortingStrategy } from '@dnd-kit/sortable'
+import { GridContainer } from '../dnd-kit/components/GridContainer'
 
-const Gallery = () => {
-    const { images } = useGalleryContext()
+interface GalleryProps {
+    items: string[]
+}
 
+const Gallery = ({ items }: GalleryProps) => {
     const props: Partial<SortableProps> = {
         adjustScale: true,
         Container: (props: any) => <GridContainer {...props} columns={6} />,
@@ -23,7 +24,7 @@ const Gallery = () => {
 
     return (
         <Sortable
-            items={images}
+            items={items}
             {...props}
             wrapperStyle={({ index }) => {
                 if (index === 0) {

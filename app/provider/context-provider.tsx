@@ -1,12 +1,12 @@
 'use client'
 
+import axios from 'axios'
+import { useRouter } from 'next/navigation'
 /* eslint-disable no-unused-vars */
 import { ReactNode, createContext, useContext, useState } from 'react'
 
 type GalleryContextType = {
-    images: string[]
     removeImage: () => void
-    setImages: (newImages: string[]) => void
     addCheckedImage: (url: string) => void
     removeCheckedImage: (url: string) => void
     checkedImage: string[]
@@ -17,11 +17,9 @@ type Props = {
 }
 
 const InitalGalleryContext: GalleryContextType = {
-    images: [],
     removeImage: () => {},
     removeCheckedImage: () => {},
     addCheckedImage: () => {},
-    setImages: () => {},
     checkedImage: [],
 }
 
@@ -32,23 +30,12 @@ export function useGalleryContext() {
 }
 
 export function GalleryContextProvider({ children }: Props) {
-    const [images, setImages] = useState<string[]>([
-        'https://i.ibb.co/tBxV04Q/1.png',
-        'https://i.ibb.co/k8s2CKW/5.png',
-        'https://i.ibb.co/cyqDHpY/4.png',
-        'https://i.ibb.co/nrpG6LQ/3.png',
-        'https://i.ibb.co/dDNPyrD/7.png',
-        'https://i.ibb.co/drdnKJc/6.png',
-        'https://i.ibb.co/jz7pw8f/5.png',
-        'https://i.ibb.co/txRjhDH/4.jpg',
-        'https://i.ibb.co/QH4vWFs/3.png',
-    ])
     const [checkedImage, setCheckedImage] = useState<string[]>([])
+    const router = useRouter()
 
-    const removeImage = () => {
-        setImages((oldImages) =>
-            oldImages.filter((image) => !checkedImage.includes(image))
-        )
+    const removeImage = async () => {
+        await axios.delete('/api/images', { data: checkedImage })
+        router.refresh()
     }
 
     const addCheckedImage = (url: string) => {
@@ -65,9 +52,7 @@ export function GalleryContextProvider({ children }: Props) {
     }
 
     const value = {
-        images,
         removeImage,
-        setImages,
         addCheckedImage,
         removeCheckedImage,
         checkedImage,
