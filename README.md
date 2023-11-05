@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Image Gallery App Documentation
 
-## Getting Started
+This documentation provides an overview of an image gallery app built with Next.js, TypeScript, Tailwind CSS, SCSS, and the DND-Kit library. The app allows users to upload, organize, and view images in a responsive and interactive gallery.
 
-First, run the development server:
+![Screenshots](https://i.ibb.co/DMb3qyP/Screenshot-from-2023-11-05-11-54-21.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Table of content
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. [Introduction](#introduction)
+2. [Prerequisites](#prerequisites)
+3. [Tech Stack](#techstack)
+4. [Features](#features)
+5. [Installation](#installation)
+6. [Structure](#structure)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Introduction
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Welcome to our project! This README provides an overview of what our project is all about. It's a great starting point to understand the purpose and goals of our work. The Image Gallery App is a web application designed to showcase and manage images efficiently. It is built with modern web technologies, including Next.js for server-side rendering, TypeScript for type safety, Tailwind CSS for styling, SCSS for advanced styling customization, and the DND-Kit library for drag-and-drop interactions.
 
-## Learn More
+## Prerequisites
 
-To learn more about Next.js, take a look at the following resources:
+Before you begin, ensure you have met the following requirements:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+-   [Node.js](https://nodejs.org/) (v14 or later)
+-   [npm](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Tech Stack
 
-## Deploy on Vercel
+**Client:** React, Next Js, TailwindCSS, ShadCN UI, Context API & SCSS.
+**Server:** Node, Prisma & PostgreSQL.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Features
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+-   **Image Upload:** Users can upload images from their local storage.
+-   **Image Organization:** Images can be organized by sorting.
+-   **Drag-and-Drop:** Utilizes DND-Kit for drag-and-drop functionality.
+-   **Responsive Design:** The app is designed to work on desktop and mobile devices.
+-   **Search and Filter:** Users can search for images and apply filters.
+
+## Installation
+
+1. **Clone the repository:**
+
+    ```bash
+    git clone https://github.com/your-username/image-gallery-app.git
+
+    ```
+
+2. **Navigate to the project directory:**
+
+    ```bash
+    cd image-gallery-app
+
+    ```
+
+3. **Install the project dependencies:**
+
+    ```bash
+     npm install
+     # or
+     yarn
+    ```
+
+## Structure
+
+    .
+    ├── image-gallery           # Root folder for image gallery
+    │   ├── app/                # Routes and Providers for app
+    │   ├── components/         # All components have their own
+    │       ├── dnd-kit/        # DND-KIT components (which are taken form dnd-kit)
+    │       ├── image-gallery/  # Image Gallery components
+    │       ├── ui/             # UI Related components generated with shadcn ui.
+    │   ├── lib/                # Additional healper functions.
+    └── ...
+
+## Acknowledgements
+
+-   [Next.js](https://nextjs.org/docs)
+-   [TypeScript](https://www.typescriptlang.org/docs)
+-   [Tailwind CSS](https://tailwindcss.com/docs)
+-   [DND-Kit](https://docs.dndkit.com/)

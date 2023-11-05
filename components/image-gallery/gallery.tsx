@@ -2,11 +2,11 @@
 
 import { useGalleryContext } from '@/app/provider/context-provider'
 import { rectSortingStrategy } from '@dnd-kit/sortable'
-import { GridContainer } from './components/GridContainer'
+import { GridContainer } from '../dnd-kit/components/GridContainer'
 import {
     Sortable,
     Props as SortableProps,
-} from './components/Sortable/Sortable'
+} from '@/components/dnd-kit/components/Sortable/Sortable'
 
 const Gallery = () => {
     const { images } = useGalleryContext()
@@ -22,22 +22,20 @@ const Gallery = () => {
     }
 
     return (
-        <div>
-            <Sortable
-                items={images}
-                {...props}
-                wrapperStyle={({ index }) => {
-                    if (index === 0) {
-                        return {
-                            gridRowStart: 'span 2',
-                            gridColumnStart: 'span 2',
-                        }
+        <Sortable
+            items={images}
+            {...props}
+            wrapperStyle={({ index }) => {
+                if (index === 0) {
+                    return {
+                        gridRowStart: 'span 2',
+                        gridColumnStart: 'span 2',
                     }
+                }
 
-                    return {}
-                }}
-            />
-        </div>
+                return {}
+            }}
+        />
     )
 }
 

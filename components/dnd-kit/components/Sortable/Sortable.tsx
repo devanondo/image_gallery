@@ -25,7 +25,6 @@ import {
     SortingStrategy,
     arrayMove,
     rectSortingStrategy,
-    sortableKeyboardCoordinates,
     useSortable,
 } from '@dnd-kit/sortable'
 
@@ -33,7 +32,6 @@ import { createRange } from '../../utilities'
 import { Item } from '../Item'
 import { List } from '../List'
 import { Wrapper } from '../Wrapper'
-import { useGalleryContext } from '@/app/provider/context-provider'
 
 export interface Props {
     activationConstraint?: PointerActivationConstraint
@@ -41,7 +39,7 @@ export interface Props {
     adjustScale?: boolean
     collisionDetection?: CollisionDetection
     coordinateGetter?: KeyboardCoordinateGetter
-    Container?: any // To-do: Fix me
+    Container?: any
     dropAnimation?: DropAnimation | null
     getNewIndex?: NewIndexGetter
     handle?: boolean
@@ -111,10 +109,7 @@ export function Sortable({
     )
 
     useEffect(() => {
-        setItems(
-            initialItems ??
-                createRange<UniqueIdentifier>(itemCount, (index) => index + 1)
-        )
+        setItems(initialItems)
     }, [initialItems, itemCount])
 
     const [activeId, setActiveId] = useState<UniqueIdentifier | null>(null)
@@ -122,10 +117,6 @@ export function Sortable({
     const isFirstAnnouncement = useRef(true)
     const getIndex = (id: UniqueIdentifier) => items.indexOf(id)
     const activeIndex = activeId ? getIndex(activeId) : -1
-    const handleRemove = removable
-        ? (id: UniqueIdentifier) =>
-              setItems((items) => items.filter((item) => item !== id))
-        : undefined
 
     useEffect(() => {
         if (!activeId) {
@@ -135,7 +126,6 @@ export function Sortable({
 
     return (
         <DndContext
-            // sensors={sensors}
             collisionDetection={collisionDetection}
             onDragStart={({ active }) => {
                 if (!active) {
@@ -173,7 +163,6 @@ export function Sortable({
                                 wrapperStyle={wrapperStyle}
                                 disabled={isDisabled(value)}
                                 renderItem={renderItem}
-                                onRemove={handleRemove}
                                 animateLayoutChanges={animateLayoutChanges}
                                 useDragOverlay={useDragOverlay}
                                 getNewIndex={getNewIndex}

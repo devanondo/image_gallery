@@ -8,12 +8,11 @@ export default function Home() {
             {/* Image Gallery container */}
             <div className="bg-white rounded-md overflow-hidden ">
                 {/* Gallery Header */}
-
                 <GalleryHeader />
 
                 <Separator />
-                {/* Gallery Body */}
 
+                {/* Gallery Body */}
                 <div className="p-6">
                     <Gallery />
                 </div>

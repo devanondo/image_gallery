@@ -7,7 +7,7 @@ const GalleryHeader = () => {
 
     return (
         <div className="py-3 px-6 flex items-center justify-between gap-x-3">
-            <p className="font-semibold text-md">Images</p>
+            <p className="font-semibold text-md">Image Gallery</p>
 
             {checkedImage.length ? (
                 <div className="flex items-center gap-x-2">
