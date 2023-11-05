@@ -21,13 +21,17 @@ Welcome to our project! This README provides an overview of what our project is 
 
 Before you begin, ensure you have met the following requirements:
 
--   [Node.js](https://nodejs.org/) (v14 or later)
--   [npm](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/)
+```bash
+    -   [Node.js](https://nodejs.org/) (v14 or later)
+    -   [npm](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/)
+```
 
 ## Tech Stack
 
-**Client:** React, Next Js, TailwindCSS, ShadCN UI, Context API & SCSS.
-**Server:** Node, Prisma & PostgreSQL.
+```bash
+    **Client:** React, Next Js, TailwindCSS, ShadCN UI, Uploadthing, Context API & SCSS.
+    **Server:** Node, Prisma & PostgreSQL.
+```
 
 ## Features
 
@@ -35,7 +39,7 @@ Before you begin, ensure you have met the following requirements:
 -   **Image Organization:** Images can be organized by sorting.
 -   **Drag-and-Drop:** Utilizes DND-Kit for drag-and-drop functionality.
 -   **Responsive Design:** The app is designed to work on desktop and mobile devices.
--   **Search and Filter:** Users can search for images and apply filters.
+-   **Server:** These data comming from server user store images permanently here use `Supabse` for storage provider.
 
 ## Installation
 
@@ -63,6 +67,7 @@ Before you begin, ensure you have met the following requirements:
 
 ## Structure
 
+```bash
     .
     ├── image-gallery           # Root folder for image gallery
     │   ├── app/                # Routes and Providers for app
@@ -72,6 +77,7 @@ Before you begin, ensure you have met the following requirements:
     │       ├── ui/             # UI Related components generated with shadcn ui.
     │   ├── lib/                # Additional healper functions.
     └── ...
+```
 
 ## Acknowledgements
 
